@@ -17,7 +17,11 @@ import {
   Palette, 
   Lock, 
   Cpu, 
-  Ruler 
+  Ruler,
+
+  Mail,
+  MessageCircle,
+
 } from "lucide-react";
 
 import Navbar from "../components/Navbar";
@@ -130,6 +134,20 @@ const beneficios = [
 
 export default function Ruleta() {
 
+const imagenes = [
+  "/FOTOS/1.jpeg",
+  "/FOTOS/2.jpeg",
+  "/FOTOS/3.jpeg",
+  "/FOTOS/4.jpeg",
+  "/FOTOS/5.jpeg",
+  "/FOTOS/6.jpeg",
+  "/FOTOS/7.jpeg",
+  "/FOTOS/8.jpeg",
+  "/FOTOS/9.jpeg",
+  "/FOTOS/10.jpeg",
+  "/FOTOS/11.jpeg"
+  
+];
 
 
     
@@ -292,7 +310,7 @@ useEffect(() => {
                   MODELO
                 </p>
                 <p className="mt-1 text-sm font-semibold tracking-wider">
-                  V6-V8
+                  V5
                 </p>
               </div>
 
@@ -491,126 +509,329 @@ useEffect(() => {
         </section>
 
         {/* BENEFICIOS */}
-        <section className="relative overflow-hidden border-y border-white/[0.06] bg-[#100b0b] px-6 py-24 lg:py-32">
 
-          <div className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-red-800/10 blur-[130px]" />
+<section className="relative isolate overflow-hidden bg-[#080808] py-28 text-white">
 
-          <div className="relative mx-auto max-w-7xl">
+      {/* ILUMINACIÓN DE FONDO */}
+      <div className="pointer-events-none absolute -left-40 top-20 h-[500px] w-[500px] rounded-full bg-[#A92129]/10 blur-[150px]" />
+      <div className="pointer-events-none absolute -right-40 bottom-0 h-[450px] w-[450px] rounded-full bg-[#c9a45c]/10 blur-[150px]" />
 
-            <div className="mb-16 max-w-2xl">
+      <div className="relative mx-auto max-w-7xl px-6">
 
-              <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.35em] text-red-500">
-                03 / VALOR PARA TU NEGOCIO
-              </p>
+        {/* ENCABEZADO */}
+        <div className="mb-16 flex flex-col gap-4">
+          <span className="text-xs font-semibold uppercase tracking-[0.4em] text-[#c9a45c]">
+            PRACMATIC · EQUIPAMIENTO PREMIUM
+          </span>
 
-              <h2 className="text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
-                Más que un equipo,
-                <span className="block text-[#c9a45c]">
-                  una solución tecnológica.
-                </span>
-              </h2>
+          <h2 className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight sm:text-6xl">
+            Tecnología que
+            <span className="block bg-gradient-to-r from-[#f1dba5] via-[#c9a45c] to-[#8c672d] bg-clip-text text-transparent">
+              transforma experiencias.
+            </span>
+          </h2>
 
-              <p className="mt-6 max-w-xl text-sm leading-8 text-white/45">
-                Descubre las ventajas de incorporar equipamiento
-                especializado con el respaldo comercial de PRACMATIC.
-              </p>
+          <p className="max-w-xl text-sm leading-7 text-white/50">
+            Descubre equipos diseñados para ofrecer innovación,
+            calidad y una experiencia de entretenimiento superior.
+          </p>
+        </div>
 
+        {/* PRESENTACIÓN PRINCIPAL */}
+        <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
+
+          {/* IMAGEN DEL PRODUCTO */}
+          <div className="group relative flex min-h-[480px] items-center justify-center overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-[#171111] via-[#0c0b0b] to-black p-8 sm:min-h-[620px]">
+
+            {/* RESPLANDOR */}
+            <div className="absolute left-1/2 top-1/2 h-[350px] w-[350px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#A92129]/20 blur-[100px] transition-all duration-700 group-hover:bg-[#A92129]/30" />
+
+            {/* ANILLO DECORATIVO */}
+            <div className="absolute left-1/2 top-1/2 h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#c9a45c]/10 transition-transform duration-1000 group-hover:scale-110 sm:h-[500px] sm:w-[500px]" />
+
+            <div className="absolute left-1/2 top-1/2 h-[290px] w-[290px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-white/10 sm:h-[410px] sm:w-[410px]" />
+
+            {/* IMAGEN */}
+{/* PASARELA DE IMÁGENES */}
+{/* PASARELA DE IMÁGENES */}
+<div className="relative z-10 flex h-[480px] w-full items-center justify-center overflow-hidden sm:h-[560px]">
+
+  {imagenes.map((imagen, index) => (
+    <img
+      key={imagen}
+      src={imagen}
+      alt={`Máquina de casino - Vista ${index + 1}`}
+      className={`absolute inset-0 h-full w-full object-contain p-4
+        drop-shadow-[0_35px_45px_rgba(0,0,0,0.8)]
+        transition-all duration-1000 ease-in-out
+        ${
+          imagenActual === index
+            ? "scale-100 opacity-100"
+            : "scale-95 opacity-0"
+        }`}
+    />
+  ))}
+
+  {/* INDICADORES */}
+  <div className="absolute bottom-3 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2">
+    {imagenes.map((_, index) => (
+      <button
+        key={index}
+        onClick={() => setImagenActual(index)}
+        aria-label={`Ver imagen ${index + 1}`}
+        className={`h-1.5 rounded-full transition-all duration-500 ${
+          imagenActual === index
+            ? "w-9 bg-[#c9a45c]"
+            : "w-3 bg-white/30 hover:bg-white/70"
+        }`}
+      />
+    ))}
+  </div>
+
+</div>
+            {/* ETIQUETA */}
+            <div className="absolute left-7 top-7 z-20">
+              <span className="rounded-full border border-[#c9a45c]/30 bg-black/40 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-[#e5c987] backdrop-blur-xl">
+                Equipo destacado
+              </span>
             </div>
 
-            <div className="grid gap-x-12 md:grid-cols-2">
-
-              {beneficios.map((item) => {
-                const Icon = item.icon;
-
-                return (
-                  <div
-                    key={item.numero}
-                    className="group flex gap-6 border-t border-white/10 py-9 transition duration-300 hover:border-[#c9a45c]/50"
-                  >
-
-                    <div className="pt-1">
-                      <span className="text-[10px] font-bold tracking-widest text-[#c9a45c]/60">
-                        {item.numero}
-                      </span>
-                    </div>
-
-                    <div className="flex-1">
-
-                      <div className="mb-5 flex items-center justify-between">
-                        <h3 className="text-lg font-semibold tracking-tight">
-                          {item.titulo}
-                        </h3>
-
-                        <Icon
-                          size={22}
-                          className="text-[#c9a45c] transition duration-300 group-hover:scale-110"
-                        />
-                      </div>
-
-                      <p className="max-w-md text-sm leading-7 text-white/45">
-                        {item.descripcion}
-                      </p>
-
-                    </div>
-
-                  </div>
-                );
-              })}
-
+            <div className="absolute bottom-7 right-7 z-20 text-right">
+              <span className="block text-[10px] uppercase tracking-[0.3em] text-white/30">
+                PRACMATIC
+              </span>
+              <span className="text-3xl font-light text-white/20">
+                01
+              </span>
             </div>
           </div>
-        </section>
 
-        {/* CIERRE COMERCIAL */}
-        <section
-          id="contacto"
-          className="relative overflow-hidden px-6 py-28 lg:py-36"
-        >
+          {/* INFORMACIÓN */}
+          <div className="flex flex-col">
 
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_100%,rgba(145,20,20,0.22),transparent_65%)]" />
+            <span className="mb-5 text-xs font-semibold uppercase tracking-[0.3em] text-[#c9a45c]">
+              Nuestra selección
+            </span>
 
-          <div className="relative mx-auto max-w-5xl text-center">
-
-            <div className="mb-8 flex items-center justify-center gap-3">
-              <span className="h-px w-10 bg-[#c9a45c]" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-[#c9a45c]">
-                PRACMATIC / CONTACTO
+            <h3 className="text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
+              Máquina de
+              <span className="block text-[#c9a45c]">
+                casino premium
               </span>
-              <span className="h-px w-10 bg-[#c9a45c]" />
-            </div>
+            </h3>
 
-            <h2 className="text-4xl font-semibold leading-tight tracking-tight sm:text-6xl">
-              Tu próximo proyecto
-              <span className="block bg-gradient-to-r from-[#f4dfa9] via-[#c9a45c] to-[#96702e] bg-clip-text text-transparent">
-                comienza aquí.
-              </span>
-            </h2>
-
-            <p className="mx-auto mb-10 mt-7 max-w-xl text-sm leading-8 text-white/50">
-              ¿Quieres conocer más sobre esta ruleta electrónica?
-              Contáctanos y recibe información sobre sus características,
-              disponibilidad y opciones comerciales.
+            <p className="mt-7 text-sm leading-8 text-white/55">
+              Una solución de entretenimiento que combina diseño,
+              tecnología y funcionalidad. Un equipo pensado para
+              espacios que buscan incorporar innovación y calidad
+              en sus operaciones.
             </p>
 
+            {/* CARACTERÍSTICAS */}
+            <div className="mt-10 space-y-5">
+
+              <div className="flex items-center gap-4 border-b border-white/10 pb-5">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#c9a45c]/20 bg-[#c9a45c]/10">
+                  <Cpu className="text-[#c9a45c]" size={20} />
+                </div>
+                <div>
+                  <h4 className="text-sm font-semibold text-white">
+                    Tecnología integrada
+                  </h4>
+                  <p className="mt-1 text-xs text-white/40">
+                    Arquitectura y sistemas especializados.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 border-b border-white/10 pb-5">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#c9a45c]/20 bg-[#c9a45c]/10">
+                  <ShieldCheck className="text-[#c9a45c]" size={20} />
+                </div>
+                <div>
+                  <h4 className="text-sm font-semibold text-white">
+                    Calidad y confiabilidad
+                  </h4>
+                  <p className="mt-1 text-xs text-white/40">
+                    Equipamiento para uso profesional.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 border-b border-white/10 pb-5">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#c9a45c]/20 bg-[#c9a45c]/10">
+                  <Zap className="text-[#c9a45c]" size={20} />
+                </div>
+                <div>
+                  <h4 className="text-sm font-semibold text-white">
+                    Diseño y funcionalidad
+                  </h4>
+                  <p className="mt-1 text-xs text-white/40">
+                    Una propuesta pensada para destacar.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            {/* BOTÓN */}
             <a
               href="/contacto"
-              className="group inline-flex min-h-16 items-center justify-center gap-5 rounded-full bg-gradient-to-r from-[#e1c483] via-[#c9a45c] to-[#a47b36] px-10 text-xs font-extrabold tracking-[0.16em] text-[#100b07] shadow-[0_15px_50px_rgba(201,164,92,0.18)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(201,164,92,0.35)]"
+              className="group mt-10 inline-flex w-fit items-center gap-4 rounded-full bg-gradient-to-r from-[#A92129] to-[#7d1119] px-8 py-4 text-xs font-bold uppercase tracking-[0.18em] text-white shadow-[0_12px_35px_rgba(169,33,41,0.2)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(169,33,41,0.35)]"
             >
-              QUIERO MÁS INFORMACIÓN
-
-              <ArrowRight
-                size={19}
-                className="transition-transform duration-300 group-hover:translate-x-2"
+              Solicitar información
+              <ArrowUpRight
+                size={17}
+                className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
               />
             </a>
 
-            <div className="mt-12 flex items-center justify-center gap-2 text-[10px] uppercase tracking-[0.25em] text-white/25">
-              <CircleCheck size={13} className="text-[#c9a45c]/60" />
-              Atención comercial PRACMATIC
-            </div>
-
           </div>
-        </section>
+        </div>
+
+        {/* FRANJA INFERIOR */}
+        <div className="mt-16 grid grid-cols-1 gap-6 border-t border-white/10 pt-8 sm:grid-cols-3">
+
+          <div className="flex items-center gap-3">
+            <Award className="text-[#c9a45c]" size={21} />
+            <span className="text-xs uppercase tracking-[0.15em] text-white/50">
+              Equipamiento especializado
+            </span>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <ShieldCheck className="text-[#c9a45c]" size={21} />
+            <span className="text-xs uppercase tracking-[0.15em] text-white/50">
+              Calidad y confianza
+            </span>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <Cpu className="text-[#c9a45c]" size={21} />
+            <span className="text-xs uppercase tracking-[0.15em] text-white/50">
+              Tecnología para casinos
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+        {/* CIERRE COMERCIAL */}
+       <section
+  id="contacto"
+  className="relative overflow-hidden px-6 py-28 lg:py-36"
+>
+  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_100%,rgba(145,20,20,0.22),transparent_65%)]" />
+
+  <div className="relative mx-auto max-w-5xl text-center">
+
+    <div className="mb-8 flex items-center justify-center gap-3">
+      <span className="h-px w-10 bg-[#c9a45c]" />
+      <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-[#c9a45c]">
+        PRACMATIC / CONTACTO
+      </span>
+      <span className="h-px w-10 bg-[#c9a45c]" />
+    </div>
+
+    <h2 className="text-4xl font-semibold leading-tight tracking-tight sm:text-6xl">
+      Tu próximo proyecto
+      <span className="block bg-gradient-to-r from-[#f4dfa9] via-[#c9a45c] to-[#96702e] bg-clip-text text-transparent">
+        comienza aquí.
+      </span>
+    </h2>
+
+    <p className="mx-auto mt-7 max-w-xl text-sm leading-8 text-white/50">
+      ¿Estás buscando equipos para tu casino o deseas conocer nuestras soluciones?
+      Contáctanos y descubre nuestro portafolio de productos, características,
+      disponibilidad y oportunidades comerciales.
+    </p>
+
+    {/* BOTONES DE CONTACTO */}
+    <div className="mx-auto mt-14 grid max-w-4xl gap-5 sm:grid-cols-3">
+
+      {/* CORREO */}
+      <a
+        href="mailto:comercial@pracmaticgroup.com"
+        className="group flex min-h-[190px] flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.03] p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[#c9a45c]/60 hover:bg-[#c9a45c]/[0.07] hover:shadow-[0_20px_50px_rgba(201,164,92,0.08)]"
+      >
+        <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl border border-[#c9a45c]/20 bg-[#c9a45c]/10 text-[#c9a45c] transition-all duration-500 group-hover:scale-110 group-hover:bg-[#c9a45c] group-hover:text-black">
+          <Mail size={25} />
+        </div>
+
+        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">
+          Correo comercial
+        </span>
+
+        <span className="mt-3 break-all text-xs font-medium text-white/80 transition-colors group-hover:text-[#e5c987]">
+          comercial@pracmaticgroup.com
+        </span>
+
+        <span className="mt-5 flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#c9a45c]">
+          Enviar correo
+          <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+        </span>
+      </a>
+
+      {/* WHATSAPP 1 */}
+      <a
+        href="https://wa.me/573115531458"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group flex min-h-[190px] flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.03] p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[#c9a45c]/60 hover:bg-[#c9a45c]/[0.07] hover:shadow-[0_20px_50px_rgba(201,164,92,0.08)]"
+      >
+        <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl border border-[#c9a45c]/20 bg-[#c9a45c]/10 text-[#c9a45c] transition-all duration-500 group-hover:scale-110 group-hover:bg-[#c9a45c] group-hover:text-black">
+          <MessageCircle size={25} />
+        </div>
+
+        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">
+          WhatsApp comercial
+        </span>
+
+        <span className="mt-3 text-base font-semibold text-white/90">
+          311 553 1458
+        </span>
+
+        <span className="mt-5 flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#c9a45c]">
+          Iniciar conversación
+          <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+        </span>
+      </a>
+
+      {/* WHATSAPP 2 */}
+      <a
+        href="https://wa.me/573204906921"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group flex min-h-[190px] flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.03] p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[#c9a45c]/60 hover:bg-[#c9a45c]/[0.07] hover:shadow-[0_20px_50px_rgba(201,164,92,0.08)]"
+      >
+        <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl border border-[#c9a45c]/20 bg-[#c9a45c]/10 text-[#c9a45c] transition-all duration-500 group-hover:scale-110 group-hover:bg-[#c9a45c] group-hover:text-black">
+          <MessageCircle size={25} />
+        </div>
+
+        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">
+          WhatsApp comercial
+        </span>
+
+        <span className="mt-3 text-base font-semibold text-white/90">
+          320 490 6921
+        </span>
+
+        <span className="mt-5 flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#c9a45c]">
+          Iniciar conversación
+          <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+        </span>
+      </a>
+
+    </div>
+
+    <div className="mt-12 flex items-center justify-center gap-2 text-[10px] uppercase tracking-[0.25em] text-white/25">
+      <CircleCheck size={13} className="text-[#c9a45c]/60" />
+      Atención comercial PRACMATIC
+    </div>
+
+  </div>
+</section>
 
       </main>
     </>

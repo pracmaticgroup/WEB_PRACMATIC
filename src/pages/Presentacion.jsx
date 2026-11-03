@@ -8,8 +8,10 @@ import {
   Gamepad2,
   CircleDot,
   Monitor,
+    CircleCheck,
+  Mail,
+  MessageCircle
 } from "lucide-react";
-
 
 import Navbar from "../components/Navbar";
 const products = [
@@ -18,7 +20,7 @@ const products = [
     title: "Máquinas de casino",
     description:
       "Máquinas de casino de marcas reconocidas internacionalmente, que combinan tecnología avanzada, diseños innovadores.",
-    image: "https://tse3.mm.bing.net/th/id/OIP.4A66ZWVqrbaBkqGZ7TH5pwAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    image: "\producto maquina.png",
     icon: <Gamepad2 size={28} />,
   },
   {
@@ -26,7 +28,7 @@ const products = [
     title: "Ruletas electrónicas",
     description:
       "Ruletas electrónicas de tecnología avanzada, con diseños sofisticados, sistemas de precisión y experiencias de juego inmersivas.",
-    image: "https://tse3.mm.bing.net/th/id/OIP.5mGGm2EOdhpVLC66r1rZMwHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    image: "\Ruletaalf.png",
     icon: <CircleDot size={28} />,
   },
   {
@@ -34,7 +36,7 @@ const products = [
     title: "Sistemas para juego",
     description:
       "Repuestos, kioscos y soluciones tecnológicas especializadas que garantizan mayor funcionalidad, eficiencia y respaldo.",
-    image: "/productos.png",
+    image: "/productos2.png",
     icon: <Monitor size={28} />,
   },
 ];
@@ -220,8 +222,8 @@ export default function Presentacion() {
 
     {/* Imagen */}
     <img
-      src="/IGT SLOT.png"
-      alt="Máquina de casino IGT"
+      src="\MAQUINASPORTADA.png"
+      alt="Máquina de casino "
       style={{
         width: "100%",
         maxHeight: "500px",
@@ -249,7 +251,7 @@ export default function Presentacion() {
 
   {/* Identificación */}
   <p className="pointer-events-none absolute bottom-0 left-0 right-0 z-20 text-center text-[10px] font-medium uppercase tracking-[0.3em] text-[#D6AD61]/80 sm:text-xs">
-    IGT MACHINE
+     MACHINE SLOT
   </p>
 
 </div>
@@ -326,140 +328,11 @@ export default function Presentacion() {
 </div>
 
 
-      {/* =========================================
+        {/* =========================================
           VALORES CORPORATIVOS
       ========================================= */}
-      <div className="relative mt-12 border-t border-white/[0.08] pt-9">
 
-        {/* Resplandor ambiental */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -top-12 left-1/4 h-32 w-1/2 rounded-full bg-[#A92129]/10 blur-[80px]"
-        />
-
-        {/* Encabezado independiente */}
-        <div className="relative mb-7 sm:mb-8">
-          <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.28em] text-[#D6AD61]">
-            Nuestra esencia
-          </p>
-
-          <h3 className="text-2xl font-semibold leading-tight tracking-[-0.04em] text-[#F5F1EE] sm:text-3xl">
-            Nuestros{" "}
-            <span className="bg-gradient-to-b from-[#FFF1BC] via-[#D6AD61] to-[#A87932] bg-clip-text text-transparent">
-              valores corporativos
-            </span>
-          </h3>
-
-          <p className="mt-3 max-w-md text-sm leading-6 text-[#A9A0A0]">
-            Los principios que respaldan nuestra forma de trabajar y construir
-            relaciones comerciales.
-          </p>
-        </div>
-
-        {/* Tarjetas de valores */}
-        <div className="relative grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-4">
-
-          {[
-            {
-              number: "01",
-              title: "Calidad",
-              detail: "Equipos seleccionados con atención al detalle.",
-              symbol: "✦",
-              delay: "0ms",
-            },
-            {
-              number: "02",
-              title: "Innovación",
-              detail: "Tecnología al servicio del entretenimiento.",
-              symbol: "⌘",
-              delay: "140ms",
-            },
-            {
-              number: "03",
-              title: "Confianza",
-              detail: "Relaciones comerciales con respaldo profesional.",
-              symbol: "◈",
-              delay: "280ms",
-            },
-          ].map((item) => (
-            <div
-              key={item.number}
-              style={{ animationDelay: item.delay }}
-              className="principio-card group relative isolate min-w-0 overflow-hidden rounded-2xl border border-white/[0.09] bg-[#130D0D]/90 p-5 transition-all duration-500 hover:-translate-y-2 hover:border-[#D6AD61]/40 hover:shadow-[0_20px_55px_rgba(0,0,0,0.35),0_0_30px_rgba(169,33,41,0.12)] sm:p-5"
-            >
-              {/* Borde superior luminoso */}
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#D6AD61]/80 to-transparent opacity-40 transition-opacity duration-500 group-hover:opacity-100"
-              />
-
-              {/* Destello */}
-              <div
-                aria-hidden="true"
-                className="principio-shimmer pointer-events-none absolute inset-y-0 -left-1/2 z-20 w-1/3 -skew-x-12 bg-gradient-to-r from-transparent via-white/[0.08] to-transparent"
-              />
-
-              {/* Halo rojo */}
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute -right-12 -top-12 -z-10 h-36 w-36 rounded-full bg-[#A92129]/15 blur-[50px] transition-all duration-700 group-hover:scale-150 group-hover:bg-[#A92129]/30"
-              />
-
-              {/* Icono y número */}
-              <div className="flex items-start justify-between">
-                <div className="relative flex h-11 w-11 items-center justify-center rounded-xl border border-[#A92129]/35 bg-gradient-to-br from-[#A92129]/20 to-transparent text-xl text-[#F5F1EE] shadow-[inset_0_0_18px_rgba(169,33,41,0.12),0_0_20px_rgba(169,33,41,0.08)] transition-all duration-500 group-hover:border-[#D6AD61]/50 group-hover:text-white group-hover:shadow-[0_0_28px_rgba(214,173,97,0.15)]">
-                  <span className="transition-transform duration-500 group-hover:scale-110">
-                    {item.symbol}
-                  </span>
-
-                  <span
-                    aria-hidden="true"
-                    className="absolute -inset-1 rounded-[14px] border border-white/[0.04] transition-all duration-500 group-hover:-inset-2 group-hover:border-[#D6AD61]/20"
-                  />
-                </div>
-
-                <span className="font-mono text-[10px] tracking-[0.2em] text-white/35 transition-colors duration-500 group-hover:text-[#D6AD61]">
-                  / {item.number}
-                </span>
-              </div>
-
-              {/* Texto de la tarjeta */}
-              <div className="mt-6">
-                <h4 className="text-base font-semibold tracking-tight text-[#F5F1EE] transition-all duration-300 group-hover:text-white group-hover:[text-shadow:0_0_20px_rgba(255,255,255,0.18)]">
-                  {item.title}
-                </h4>
-
-                <p className="mt-2 text-xs leading-6 text-[#A9A0A0] transition-colors duration-300 group-hover:text-[#D5CCCC]">
-                  {item.detail}
-                </p>
-              </div>
-
-              {/* Indicador inferior */}
-              <div className="mt-6 flex items-center gap-3">
-                <div className="h-[2px] w-8 overflow-hidden rounded-full bg-white/10 transition-all duration-500 group-hover:w-12 group-hover:bg-[#A92129]/40">
-                  <div className="h-full w-1/2 rounded-full bg-gradient-to-r from-[#A92129] to-[#D6AD61] transition-all duration-500 group-hover:w-full" />
-                </div>
-
-                <span className="text-[9px] font-medium uppercase tracking-[0.16em] text-white/25 transition-colors duration-500 group-hover:text-[#D6AD61]/80">
-                  PRACMATIC
-                </span>
-              </div>
-
-              {/* Esquina decorativa */}
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute bottom-0 right-0 h-12 w-12 opacity-40 transition-opacity duration-500 group-hover:opacity-100"
-                style={{
-                  background:
-                    "linear-gradient(135deg, transparent 48%, rgba(169,33,41,0.5) 49%, rgba(214,173,97,0.6) 50%, transparent 53%)",
-                }}
-              />
-            </div>
-          ))}
-
-        </div>
       </div>
-    </div>
 
     {/* =========================================
         COLUMNA DERECHA — VISIÓN CORPORATIVA
@@ -693,17 +566,8 @@ export default function Presentacion() {
             {product.description}
           </p>
 
-          <a
-            href="#contacto"
-            className="mt-6 inline-flex min-h-11 max-w-full items-center gap-2 rounded-sm text-sm font-medium text-white/90 transition-colors duration-300 hover:text-[#E2B8BC] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C0C0C0] focus-visible:ring-offset-4 focus-visible:ring-offset-black"
-          >
-            Solicitar información
-            <ArrowUpRight
-              size={17}
-              className="shrink-0 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-            />
-          </a>
-        </div>
+
+          </div>
 
         {/* Línea inferior */}
         <div
@@ -713,6 +577,14 @@ export default function Presentacion() {
       </article>
     ))}
   </div>
+
+  <a
+  href="/ruletas"
+  className="mt-7 inline-flex items-center gap-3 rounded-full border border-[#c9a45c]/50 bg-[#c9a45c]/[0.06] px-6 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#e5c987] transition-all duration-300 hover:border-[#c9a45c] hover:bg-[#c9a45c] hover:text-[#100b08]"
+>
+  Ver portafolio
+  <ArrowUpRight size={16} />
+</a>
 </section>
 
 
@@ -761,48 +633,120 @@ export default function Presentacion() {
         </section>
 
         {/* Contacto */}
-        <section
-          id="contacto"
-          className="scroll-mt-20 relative isolate overflow-hidden px-5 py-20 sm:px-8 sm:py-24 lg:px-12 lg:py-28"
-        >
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
-          >
-            <div className="absolute left-1/2 top-1/2 h-[300px] w-[min(90vw,700px)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#e50914]/10 blur-[110px]" />
-          </div>
+<section
+  id="contacto"
+  className="relative overflow-hidden px-6 py-28 lg:py-36"
+>
+  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_100%,rgba(145,20,20,0.22),transparent_65%)]" />
 
-          <div className="relative mx-auto w-full max-w-4xl overflow-hidden rounded-3xl border border-[#f5b942]/15 bg-gradient-to-br from-[#201010] via-[#120b0b] to-[#0b0808] px-5 py-12 text-center sm:px-10 sm:py-16 lg:px-14 lg:py-20">
-            <div
-              aria-hidden="true"
-              className="absolute left-1/2 top-0 h-px w-3/4 -translate-x-1/2 bg-gradient-to-r from-transparent via-[#f5b942]/70 to-transparent"
-            />
+  <div className="relative mx-auto max-w-5xl text-center">
 
-            <p className={sectionLabel}>Hablemos de negocios</p>
+    <div className="mb-8 flex items-center justify-center gap-3">
+      <span className="h-px w-10 bg-[#c9a45c]" />
+      <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-[#c9a45c]">
+        PRACMATIC / CONTACTO
+      </span>
+      <span className="h-px w-10 bg-[#c9a45c]" />
+    </div>
 
-            <h2 className="mx-auto max-w-3xl text-3xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
-              Encuentra el equipo adecuado para{" "}
-              <span className={accentText}>tu negocio.</span>
-            </h2>
+    <h2 className="text-4xl font-semibold leading-tight tracking-tight sm:text-6xl">
+      Tu próximo proyecto
+      <span className="block bg-gradient-to-r from-[#f4dfa9] via-[#c9a45c] to-[#96702e] bg-clip-text text-transparent">
+        comienza aquí.
+      </span>
+    </h2>
 
-            <p className={`mx-auto mt-5 max-w-xl ${paragraph}`}>
-              Contáctanos para conocer nuestro portafolio, consultar
-              disponibilidad y recibir información comercial sobre
-              nuestros equipos.
-            </p>
+    <p className="mx-auto mt-7 max-w-xl text-sm leading-8 text-white/50">
+      ¿Estás buscando equipos para tu casino o deseas conocer nuestras soluciones?
+      Contáctanos y descubre nuestro portafolio de productos, características,
+      disponibilidad y oportunidades comerciales.
+    </p>
 
-            <a
-              href="mailto:ventas@tuempresa.com"
-              className="group mt-8 inline-flex min-h-12 max-w-full items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#e50914] to-[#b90810] px-6 py-3.5 text-center text-sm font-semibold text-white shadow-[0_8px_28px_rgba(229,9,20,0.2)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_35px_rgba(229,9,20,0.3)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f5b942] sm:px-7"
-            >
-              Contactar al equipo comercial
-              <ArrowUpRight
-                size={18}
-                className="shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-              />
-            </a>
-          </div>
-        </section>
+    {/* BOTONES DE CONTACTO */}
+    <div className="mx-auto mt-14 grid max-w-4xl gap-5 sm:grid-cols-3">
+
+      {/* CORREO */}
+      <a
+        href="mailto:comercial@pracmaticgroup.com"
+        className="group flex min-h-[190px] flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.03] p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[#c9a45c]/60 hover:bg-[#c9a45c]/[0.07] hover:shadow-[0_20px_50px_rgba(201,164,92,0.08)]"
+      >
+        <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl border border-[#c9a45c]/20 bg-[#c9a45c]/10 text-[#c9a45c] transition-all duration-500 group-hover:scale-110 group-hover:bg-[#c9a45c] group-hover:text-black">
+          <Mail size={25} />
+        </div>
+
+        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">
+          Correo comercial
+        </span>
+
+        <span className="mt-3 break-all text-xs font-medium text-white/80 transition-colors group-hover:text-[#e5c987]">
+          comercial@pracmaticgroup.com
+        </span>
+
+        <span className="mt-5 flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#c9a45c]">
+          Enviar correo
+          <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+        </span>
+      </a>
+
+      {/* WHATSAPP 1 */}
+      <a
+        href="https://wa.me/573115531458"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group flex min-h-[190px] flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.03] p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[#c9a45c]/60 hover:bg-[#c9a45c]/[0.07] hover:shadow-[0_20px_50px_rgba(201,164,92,0.08)]"
+      >
+        <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl border border-[#c9a45c]/20 bg-[#c9a45c]/10 text-[#c9a45c] transition-all duration-500 group-hover:scale-110 group-hover:bg-[#c9a45c] group-hover:text-black">
+          <MessageCircle size={25} />
+        </div>
+
+        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">
+          WhatsApp comercial
+        </span>
+
+        <span className="mt-3 text-base font-semibold text-white/90">
+          311 553 1458
+        </span>
+
+        <span className="mt-5 flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#c9a45c]">
+          Iniciar conversación
+          <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+        </span>
+      </a>
+
+      {/* WHATSAPP 2 */}
+      <a
+        href="https://wa.me/573204906921"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group flex min-h-[190px] flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.03] p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[#c9a45c]/60 hover:bg-[#c9a45c]/[0.07] hover:shadow-[0_20px_50px_rgba(201,164,92,0.08)]"
+      >
+        <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl border border-[#c9a45c]/20 bg-[#c9a45c]/10 text-[#c9a45c] transition-all duration-500 group-hover:scale-110 group-hover:bg-[#c9a45c] group-hover:text-black">
+          <MessageCircle size={25} />
+        </div>
+
+        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">
+          WhatsApp comercial
+        </span>
+
+        <span className="mt-3 text-base font-semibold text-white/90">
+          320 490 6921
+        </span>
+
+        <span className="mt-5 flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#c9a45c]">
+          Iniciar conversación
+          <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+        </span>
+      </a>
+
+    </div>
+
+    <div className="mt-12 flex items-center justify-center gap-2 text-[10px] uppercase tracking-[0.25em] text-white/25">
+      <CircleCheck size={13} className="text-[#c9a45c]/60" />
+      Atención comercial PRACMATIC
+    </div>
+
+  </div>
+</section>
 
         {/* Pie de página */}
         <footer className="border-t border-[#f5b942]/15 bg-[#080505]/80 px-5 py-7 sm:px-8 lg:px-12">

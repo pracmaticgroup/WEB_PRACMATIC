@@ -5,9 +5,8 @@ import { NavLink } from "react-router-dom";
 const enlaces = [
   { nombre: "Inicio", ruta: "/", end: true },
   { nombre: "Nosotros", ruta: "/nosotros" },
-  { nombre: "Máquinas de casino", ruta: "/maquinas" },
-  { nombre: "Ruletas electrónicas", ruta: "/ruletas" },
-  { nombre: "Productos varios", ruta: "/productos" },
+  { nombre: "Productos", ruta: "/ruletas" },
+  { nombre: "Contactanos", ruta: "/productos" },
 ];
 
 // WHATSAPP CORPORATIVO
