@@ -1,0 +1,230 @@
+/* ===== NAVBAR PRINCIPAL ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  width: 100%;
+  min-height: 50px;
+  padding: 0 5% 0 8%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* Fondo oscuro rojizo semitransparente */
+  background: rgba(16, 7, 7, 0.5);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid rgba(245, 185, 66, 0.15);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+
+  box-sizing: border-box;
+
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* ===== BRILLO SUTIL INFERIOR ===== */
+.navbar::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 10%;
+  width: 80%;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(229, 9, 20, 0.5),
+    rgba(245, 185, 66, 0.35),
+    transparent
+  );
+
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* ===== LOGOTIPO ===== */
+.navbar .navbar-logo {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+
+  /* Degradado rojo rubí a dorado */
+  background: linear-gradient(
+    90deg,
+    #e50914,
+    #f5b942
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  font-size: 27px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+
+  filter: drop-shadow(0 0 8px rgba(229, 9, 20, 0.12));
+
+  transition:
+    filter 0.3s ease,
+    transform 0.3s ease;
+}
+
+.navbar .navbar-logo:hover {
+  filter: drop-shadow(0 0 12px rgba(245, 185, 66, 0.35));
+  transform: translateY(-1px);
+}
+
+/* Línea animada del logotipo */
+.navbar .navbar-logo::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    #e50914,
+    #f5b942
+  );
+
+  border-radius: 5px;
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition: transform 0.4s ease;
+}
+
+.navbar .navbar-logo:hover::after {
+  transform: scaleX(1);
+}
+
+/* ===== MENÚ ===== */
+.navbar .navbar-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+}
+
+/* ===== ENLACES ===== */
+.navbar .navbar-link {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  padding: 12px 0;
+
+  color: #f5eeee;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+/* Línea inferior roja y dorada */
+.navbar .navbar-link::after {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    #e50914,
+    #f5b942
+  );
+
+  border-radius: 5px;
+
+  transform: scaleX(0);
+  transform-origin: center;
+
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Hover y enlace activo */
+.navbar .navbar-link:hover,
+.navbar .navbar-link.activo {
+  color: #f5b942;
+  text-shadow: 0 0 12px rgba(245, 185, 66, 0.18);
+}
+
+.navbar .navbar-link:hover {
+  transform: translateY(-2px);
+}
+
+.navbar .navbar-link:hover::after,
+.navbar .navbar-link.activo::after {
+  transform: scaleX(1);
+}
+
+/* ===== TABLETAS ===== */
+@media (max-width: 800px) {
+  .navbar {
+    padding: 0 5%;
+  }
+
+  .navbar .navbar-menu {
+    gap: 20px;
+  }
+
+  .navbar .navbar-logo {
+    font-size: 23px;
+  }
+}
+
+/* ===== CELULARES ===== */
+@media (max-width: 560px) {
+  .navbar {
+    min-height: 50px;
+    padding: 12px 5%;
+
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .navbar .navbar-menu {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+  }
+
+  .navbar .navbar-link {
+    font-size: 14px;
+  }
+}
+
+/* ===== ACCESIBILIDAD: MOVIMIENTO REDUCIDO ===== */
+@media (prefers-reduced-motion: reduce) {
+  .navbar,
+  .navbar .navbar-logo,
+  .navbar .navbar-logo::after,
+  .navbar .navbar-link,
+  .navbar .navbar-link::after {
+    transition: none;
+  }
+}
